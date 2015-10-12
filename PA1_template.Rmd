@@ -262,10 +262,12 @@ head(newActivityData)
 2. Make a panel plot containing a time series plot (i.e. `type = "l"`) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). 
 
 ```{r}
-# Create a dataframe containing the mean number of steps per interval taken across all weekend or weekday days.
+# Create a dataframe containing the mean number of steps per interval taken
+#across all weekend or weekday days.
 meanAverageSteps <- aggregate(newActivityData$steps,
                           by=list(newActivityData$interval,
-                                  newActivityData$dayType),                                                      FUN=mean)
+                                  newActivityData$dayType),
+                                  FUN=mean)
 
 #Rename columns 
 names(meanAverageSteps) <- c("interval", "dayType", "meanSteps")

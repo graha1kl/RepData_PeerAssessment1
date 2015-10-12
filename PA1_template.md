@@ -300,10 +300,12 @@ head(newActivityData)
 
 
 ```r
-# Create a dataframe containing the mean number of steps per interval taken across all weekend or weekday days.
+# Create a dataframe containing the mean number of steps per interval taken
+#across all weekend or weekday days.
 meanAverageSteps <- aggregate(newActivityData$steps,
                           by=list(newActivityData$interval,
-                                  newActivityData$dayType),                                                      FUN=mean)
+                                  newActivityData$dayType),
+                                  FUN=mean)
 
 #Rename columns 
 names(meanAverageSteps) <- c("interval", "dayType", "meanSteps")

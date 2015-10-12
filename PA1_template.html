@@ -491,10 +491,12 @@ newActivityData$dayType &lt;- dayType
 <li>Make a panel plot containing a time series plot (i.e. <code>type = &quot;l&quot;</code>) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). </li>
 </ol>
 
-<pre><code class="r"># Create a dataframe containing the mean number of steps per interval taken across all weekend or weekday days.
+<pre><code class="r"># Create a dataframe containing the mean number of steps per interval taken
+#across all weekend or weekday days.
 meanAverageSteps &lt;- aggregate(newActivityData$steps,
                           by=list(newActivityData$interval,
-                                  newActivityData$dayType),                                                      FUN=mean)
+                                  newActivityData$dayType),
+                                  FUN=mean)
 
 #Rename columns 
 names(meanAverageSteps) &lt;- c(&quot;interval&quot;, &quot;dayType&quot;, &quot;meanSteps&quot;)
